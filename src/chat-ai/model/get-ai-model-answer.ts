@@ -13,4 +13,9 @@ export class GetAiModelAnswer {
     @IsNumber()
     @IsOptional()
     temperature: number
+
+    @IsNumber()
+    @IsOptional()
+    maxTokens:number
+    
 }//end class GetAiModelAnswer

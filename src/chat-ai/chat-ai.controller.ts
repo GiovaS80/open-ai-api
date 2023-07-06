@@ -10,7 +10,7 @@ export class ChatAiController {
     @Post("/message")
     @UsePipes(ValidationPipe)
     getModelAnswer(@Body() data: GetAiModelAnswer) {
-        return this.service.getModelAnswer(data.question)
+        return this.service.getModelAnswer(data)
     }//end getModelAnswer
 
     @Get("/list-model")
