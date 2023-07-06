@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post, UsePipes, ValidationPipe } from '@nestjs/common';
 import { ChatAiService } from './chat-ai.service';
 import { GetAiModelAnswer } from './model/get-ai-model-answer';
 import { SetSelectedModel } from './model/sect-selected-model';
@@ -8,6 +8,7 @@ export class ChatAiController {
     constructor(private readonly service: ChatAiService) { }
 
     @Post("/message")
+    @UsePipes(ValidationPipe)
     getModelAnswer(@Body() data: GetAiModelAnswer) {
         return this.service.getModelAnswer(data.question)
     }//end getModelAnswer
@@ -18,6 +19,7 @@ export class ChatAiController {
     }//end listModels
 
     @Post("/set-model")
+    @UsePipes(ValidationPipe)
     setModel(@Body() data: SetSelectedModel) {
         return this.service.setModelId(data.modelId)
     }//end setModel
