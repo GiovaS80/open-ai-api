@@ -2,7 +2,9 @@ import { Body, Controller, Get, Post, UsePipes, ValidationPipe } from '@nestjs/c
 import { ChatAiService } from './chat-ai.service';
 import { GetAiModelAnswer } from './model/get-ai-model-answer';
 import { SetSelectedModel } from './model/sect-selected-model';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Chat-OpenAI')
 @Controller('chat-ai')
 export class ChatAiController {
     constructor(private readonly service: ChatAiService) { }
