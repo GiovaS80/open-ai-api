@@ -20,6 +20,7 @@ export class ChatAiService {
         this.openAiApi = new OpenAIApi(configuration);
     }//end constructor
 
+
     setModelId(modelId: string) {
         this.selectedModelId = this.cleanModelId(modelId)
     }//end setModelId

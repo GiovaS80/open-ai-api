@@ -9,6 +9,7 @@ import { ApiTags } from '@nestjs/swagger';
 export class ChatAiController {
     constructor(private readonly service: ChatAiService) { }
 
+
     @Post("/message")
     @UsePipes(ValidationPipe)
     getModelAnswer(@Body() data: GetAiModelAnswer) {
