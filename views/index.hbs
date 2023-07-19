@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>App</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+
+<body style="font-size: 300%;">
+    <div class="container text-center" style="font-size: 150%;">
+        <h1 class="m-4" style="font-size: 150%;">Test Call AI</h1>
+        <p class="m-4" >Ask a question</p>
+        <input class="m-4 w-100" type="text" placeholder="Ask a question" name="qst" id="qst" value="">
+        <a id="ask" style="font-size: 100%;" class="btn btn-primary m-4" onclick="sendAsk()" href="">Ask</a>
+        <p> {{resp}} </p>
+        <br><hr><br>
+        <a id="ask" style="font-size: 100%;" class="btn btn-primary m-4" href="/ShowAll">Show All</a>
+
+    </div>
+</body>
+<script>
+    function sendAsk() {
+        const par = document.getElementById('qst').value;
+        const link = document.getElementById('ask');
+        link.href = "/" + par
+    }
+    
+</script>
+
+</html>
